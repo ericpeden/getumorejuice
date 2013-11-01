@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
+import simplejson as json
+
 AUTHOR = u'Eric Peden'
 SITENAME = u'I Get You More Juice'
 SITEURL = ''
@@ -9,6 +11,19 @@ SITEURL = ''
 TIMEZONE = 'Europe/Paris'
 
 DEFAULT_LANG = u'en'
+DEFAULT_DATE = 'fs'
+
+RECIPE_URL = 'recipes/{slug}.json'
+RECIPE_SAVE_AS = RECIPE_URL
+
+RECIPE_DIR = 'recipes'
+ARTICLE_EXCLUDES = ('pages', 'recipes',)
+
+EXTRA_TEMPLATES_PATHS = ('templates',)
+
+JINJA_FILTERS = {
+    'tojson': json.dumps,
+}
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -31,3 +46,5 @@ DEFAULT_PAGINATION = 25
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+PLUGINS = ["getumorejuice"]

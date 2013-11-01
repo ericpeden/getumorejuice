@@ -1,6 +1,4 @@
-#!/usr/bin/env python
-
-# text2json, part of getumorejuice, converts specially formatted files to JSON
+# converters, part of getumorejuice, converts specially formatted files to JSON
 # Copyright (C) 2013  Eric Peden
 #
 # You should have received a copy of the GNU General Public License
@@ -35,11 +33,11 @@ def parse_recipe(text):
     comments = list(rest)
     
     recipe = {
-        "name": title,
+        "title": title,
         "ingredients": ingredients,
         "comments": comments
     }
-    print json.dumps(recipe)
+    return recipe
     
 
 def parse_ingredient(text):
